@@ -1,18 +1,18 @@
 {
-  "name": "angular-devise-token-seed",
+  "name": "angularcli",
   "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
+    "ng": "ng",
     "start": "ng serve",
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
-    "e2e": "protractor",
-    "postinstall": "ng build --aot -prod"
+    "e2e": "protractor"
+
   },
   "private": true,
   "dependencies": {
-    "@angular/cli": "1.0.0-beta.30",
     "@angular/common": "^2.3.1",
     "@angular/compiler": "^2.3.1",
     "@angular/core": "^2.3.1",
@@ -23,9 +23,6 @@
     "@angular/router": "^3.3.1",
     "angular2-flash-messages": "^1.0.8",
     "angular2-jwt": "^0.2.3",
-    "angular2-notifications": "^0.7.4",
-    "auth0-js": "^8.6.1",
-    "auth0-lock": "^10.16.0",
     "body-parser": "^1.17.1",
     "core-js": "^2.4.1",
     "express": "^4.15.2",
@@ -35,6 +32,7 @@
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.7.2"
+
   },
   "devDependencies": {
     "@angular/cli": "1.0.0-beta.30",

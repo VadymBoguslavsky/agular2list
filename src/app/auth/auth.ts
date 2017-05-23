@@ -4,7 +4,7 @@ import { Router }                from '@angular/router';
 import { Location }              from '@angular/common';
 import { Subject }               from 'rxjs/Subject';
 import { APP_CONFIG, AppConfig } from '../app.config';
-// import { SimpleNotificationsModule } from 'angular2-notifications';
+
 
 @Injectable()
 export class AuthService {
@@ -35,7 +35,6 @@ export class AuthService {
           this.setAccessToken(res.json().access_token);
           this.setLogIn(true);
           this.router.navigate(['/admin']);
-          // this._flash.success('', 'Signed in successfully!');
         }
       }, error => {
         this.handleError(error.text(), 'Login failed!')

@@ -28,7 +28,7 @@ import { ConfirmEmailComponent }       from './auth/confirm-email';
 import { APP_CONFIG, appConfig }      from './app.config';
 import { AuthService }                from './auth/auth';
 import { AdminComponent }             from './auth/admin';
-import { SimpleNotificationsModule } from 'angular2-notifications';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,12 +53,16 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
     AppRoutingModule,
     FlashMessagesModule,
     MyDatePickerModule,
-    RouterModule,
-    SimpleNotificationsModule
+    RouterModule
+
   ],
-  providers: [TaskService,AuthService,FormBuilder,
-    Validators,
-    { provide: APP_CONFIG, useFactory: appConfig }],
+  providers: [TaskService,
+              AuthService,
+              FormBuilder,
+              Validators,
+              { provide: APP_CONFIG,
+                useFactory: appConfig
+              }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
