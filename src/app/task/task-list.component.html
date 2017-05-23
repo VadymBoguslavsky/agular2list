@@ -1,0 +1,55 @@
+<div class="container">
+
+ <button [disabled]="!selectedTasks.length" (click)="batchDestroy(selectedTasks);"
+        class="btn btn-danger">Delete Selected</button>
+      <button (click)="checkAll();"
+        class="btn btn-default">Check All</button>
+      <button (click)="uncheckAll();"
+        class="btn btn-default">Uncheck All</button>
+
+
+  <h2>Active tasks</h2>
+  <div *ngIf="isExists(activeTasks)">
+    <div class="mishas task-list" *ngFor="let task of activeTasks">
+      <label>
+        <input class="misha" type="checkbox" name="selectedTasks" value="{{task}}" [checked]="task.marked" (change)="updateCheckedOptions(task, $event)"/>
+      </label>
+      <div class="hover1 col-lg-10 ">
+        {{task.title}}
+        <a class="hoverhhh glyphicon glyphicon-pencil pull-right" (click)="goToShow(task)"></a>
+        <a [ngClass]="{'glyphicon glyphicon-ok': !task.completed, '': task.completed }"
+          (click)="task.completed =  !task.completed; update(task);" class="glyphicon glyphicon-ok hoverhhh pull-right glyph">
+          <span *ngIf="!task.completed"></span>
+          <span *ngIf="task.completed"></span>
+        </a>
+        <hr>
+      </div>
+
+
+    </div>
+  </div>
+  <br>
+  <h2>Completed tasks</h2>
+  <div *ngIf="isExists(completedTasks)">
+    <div class="mishas task-list" *ngFor="let task of completedTasks">
+      <label>
+        <input class="misha" type="checkbox" name="selectedTasks" value="{{task}}" [checked]="task.marked"
+               (change)="updateCheckedOptions(task, $event)"/>
+      </label>
+      <div class="hover1 col-lg-10 ">
+        {{task.title}}
+        <a class="hoverhhh glyphicon glyphicon-pencil pull-right" (click)="goToShow(task)"></a>
+        <a [ngClass]="{'': !task.completed, 'glyphicon glyphicon-remove': task.completed }"
+          (click)="task.completed =  !task.completed; update(task);" class="glyphicon glyphicon-remove pull-right glyph hoverhhh">
+            <span *ngIf="!task.completed"></span>
+            <span *ngIf="task.completed"></span>
+        </a>
+        <hr>
+      </div>
+
+
+
+    </div>
+  </div>
+
+</div>
