@@ -10,7 +10,7 @@ export class TaskService {
   public tasks: Subject<Task[]>;
   headers: Headers;
   options: RequestOptions;
-  private tasksUrl = 'http://localhost:3000/api/tasks';
+  private tasksUrl = 'https://vadimapi.herokuapp.com/api/tasks';
 
   constructor(private http: Http) {
     this.headers = new Headers({'Content-Type': 'application/json'});
