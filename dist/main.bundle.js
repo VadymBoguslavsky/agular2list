@@ -144,7 +144,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var TaskService = (function () {
     function TaskService(http) {
         this.http = http;
-        this.tasksUrl = 'http://localhost:3000/api/tasks';
+        this.tasksUrl = 'https://vadimapi.herokuapp.com/api/tasks';
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
         this.options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: this.headers });
     }
@@ -301,9 +301,9 @@ var CONFIG_PRODUCTION = {
     clientId: "77d40037169ced17fa95bb17a8b2a55b0fcfabbf9b37400fa104a01a37fc1c0b"
 };
 var CONFIG_DEVELOPMENT = {
-    serverUrl: "http://localhost:3000",
-    apiEndpoint: "http://localhost:3000/api",
-    clientId: "bb9818f70964383d26bd57bb60715f7430311b6ccb5021152321932a8f261a43"
+    serverUrl: "https://vadimapi.herokuapp.com",
+    apiEndpoint: "https://vadimapi.herokuapp.com/api",
+    clientId: "77d40037169ced17fa95bb17a8b2a55b0fcfabbf9b37400fa104a01a37fc1c0b"
 };
 function appConfig() {
     return __WEBPACK_IMPORTED_MODULE_1__environments_environment__["a" /* environment */].production ? CONFIG_PRODUCTION : CONFIG_DEVELOPMENT;
